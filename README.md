@@ -1,2 +1,1 @@
-# Boilerplate-Webpack
-A boilerplate for creating simple web apps
+# Multi Dropdowns Widget
