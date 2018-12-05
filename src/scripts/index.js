@@ -1,9 +1,17 @@
+import './windowProps';
+import Events from './pubSub/pubSubConstants';
 
-function component() {
-	const element = document.createElement('div');
-	element.innerHTML = 'Testing';
+const firstDropdown = document.querySelector('[data-select-no="1"]');
 
-	return element;
-}
+firstDropdown.addEventListener('change', (e) => {
+	// console.log(e.target.value);
+	window.pubsub.events.publish(Events.DROPDOWN_CHANGED, { payload: e.target.value });
+});
 
-document.body.appendChild(component());
+const callbackHere = (info) => {
+	console.log(`${info.payload} selected`);
+};
+
+(function () {
+	window.pubsub.events.subscribe(Events.DROPDOWN_CHANGED, callbackHere);
+}());

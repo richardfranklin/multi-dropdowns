@@ -11,6 +11,7 @@ module.exports = {
 		publicPath: '/dist/scripts/',
 		filename: 'main.js',
 	},
+	devtool: 'eval-source-map',
 	plugins: [],
 	module: {
 		rules: [
